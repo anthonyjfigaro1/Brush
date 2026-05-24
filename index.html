@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+Here's the complete updated HTML file with the last textbox now mandatory:
+HTML<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -59,7 +60,7 @@
   }
 
   .logo {
-    font-size: 50px;
+    font-size: 20px;
     font-weight: 800;
     letter-spacing: 0.28em;
     color: var(--red-light);
@@ -615,8 +616,8 @@
       <div class="opt" onclick="selectOne(this,'q6a')"><div class="opt-indicator"></div>Meeting people in places I already go</div>
       <div class="opt" onclick="selectOne(this,'q6a')"><div class="opt-indicator"></div>Nothing — I'm not excited by this concept</div>
     </div>
-<p class="q-sub-sm">Any other thoughts, concerns, or ideas?</p>
-<textarea class="text-area" id="q6b" placeholder="Share anything on your mind..."></textarea>
+    <p class="q-sub-sm">Any other thoughts, concerns, or ideas?</p>
+    <textarea class="text-area" id="q6b" placeholder="Share anything on your mind..."></textarea>
     <div class="err" id="err6"></div>
     <div class="btn-row">
       <button class="btn-back" onclick="goBack(6)">Back</button>
@@ -722,7 +723,17 @@ function goBack(step) {
 
 async function submitSurvey() {
   const exciting = getSelected('q6a');
-  if (!exciting) { showErr('err6', 'Please select an option before submitting.'); return; }
+  if (!exciting) { 
+    showErr('err6', 'Please select an option before submitting.'); 
+    return; 
+  }
+
+  const feedback = document.getElementById('q6b').value.trim();
+  if (!feedback) { 
+    showErr('err6', 'Please share your thoughts before submitting.'); 
+    return; 
+  }
+
   clearErr('err6');
 
   document.getElementById('submit-btn').disabled = true;
@@ -740,7 +751,7 @@ async function submitSurvey() {
     'Would Actually Use': getSelected('q5a'),
     'Feels Safe': getSelected('q5b'),
     'Most Exciting': exciting,
-    'Open Feedback': document.getElementById('q6b').value.trim() || '—'
+    'Open Feedback': feedback
   };
 
   try {

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -16,8 +17,8 @@
     --ink-2: #251A18;
     --ink-3: #2E201E;
     --cream: #F5EFE6;
-    --cream-dim: #C9BFB4;
-    --cream-muted: rgba(245,239,230,0.5);
+    --cream-dim: #F5EFE6;
+    --cream-muted: rgba(245,239,230,1.0);
     --border: rgba(245,239,230,0.08);
     --border-red: rgba(138,14,14,0.6);
     --selected-bg: rgba(138,14,14,0.22);
@@ -488,7 +489,7 @@
   <div class="step active" id="s0">
     <div class="step-tag">Your details</div>
     <h2 class="q-title">First, a few basics</h2>
-    <p class="q-sub">Only used to contact you if you win; we won't reach out for anything else.</p>
+    <p class="q-sub">Only used to contact you if you win — we won't reach out for anything else.</p>
     <label class="field-label">First name</label>
     <input class="text-input" id="f-name" type="text" placeholder="e.g. Jamie" autocomplete="given-name">
     <label class="field-label">Age</label>
@@ -569,7 +570,7 @@
       <div class="opt" onclick="selectOne(this,'q4b')"><div class="opt-indicator"></div>Not knowing if they're even interested</div>
       <div class="opt" onclick="selectOne(this,'q4b')"><div class="opt-indicator"></div>Worry about coming across as creepy</div>
       <div class="opt" onclick="selectOne(this,'q4b')"><div class="opt-indicator"></div>I never know what to say</div>
-      <div class="opt" onclick="selectOne(this,'q4b')"><div class="opt-indicator"></div>No real barrier, I'm comfortable</div>
+      <div class="opt" onclick="selectOne(this,'q4b')"><div class="opt-indicator"></div>No real barrier — I'm comfortable</div>
     </div>
     <div class="btn-row">
       <button class="btn-back" onclick="goBack(4)">Back</button>
@@ -579,24 +580,24 @@
 
   <div class="step" id="s5">
     <div class="step-tag">Question 5 of 6</div>
-    <h2 class="q-title">What we're building combines the <em>transparency of mutual interest</em> from online dating with the <em>real connection</em> that happens face to face.</h2>
+    <h2 class="q-title">What we're building combines the <em>transparency of mutual interest</em> from online dating — with the <em>real connection</em> that happens face to face.</h2>
     <p class="q-sub" style="margin-bottom:12px;">Here's how it works:</p>
     <div class="concept-box">
       It starts with people who already share your world: same bars, same gyms, same campuses. When you match and the conversation feels right, you both flip a switch: a <strong>mutual agreement</strong> to spark up a conversation in person. Whenever your paths cross, <strong>you'll both get the signal</strong> at the exact same moment. That's your <span class="nudge-word">nudge.</span>
     </div>
     <p class="q-sub-sm">What do you think about this idea?</p>
     <div class="opts" id="q5a">
-      <div class="opt" onclick="selectOne(this,'q5a')"><div class="opt-indicator"></div>Love it, I'd download this today</div>
-      <div class="opt" onclick="selectOne(this,'q5a')"><div class="opt-indicator"></div>Like it, would depend on how it works</div>
-      <div class="opt" onclick="selectOne(this,'q5a')"><div class="opt-indicator"></div>Interesting, I'd want to try it first</div>
+      <div class="opt" onclick="selectOne(this,'q5a')"><div class="opt-indicator"></div>Love it — I'd download this today</div>
+      <div class="opt" onclick="selectOne(this,'q5a')"><div class="opt-indicator"></div>Like it — would depend on how it works</div>
+      <div class="opt" onclick="selectOne(this,'q5a')"><div class="opt-indicator"></div>Interesting — I'd want to try it first</div>
       <div class="opt" onclick="selectOne(this,'q5a')"><div class="opt-indicator"></div>Not for me</div>
     </div>
     <p class="q-sub-sm">How does the in-person element make you feel?</p>
     <p class="q-hint">There's no wrong answer — your honest reaction helps us build something better.</p>
     <div class="opts" id="q5b">
-      <div class="opt" onclick="selectOne(this,'q5b')"><div class="opt-indicator"></div>Excited, that's exactly the point</div>
-      <div class="opt" onclick="selectOne(this,'q5b')"><div class="opt-indicator"></div>Comfortable, mutual consent makes it feel safe</div>
-      <div class="opt" onclick="selectOne(this,'q5b')"><div class="opt-indicator"></div>A little unsure, I'd want to know more first</div>
+      <div class="opt" onclick="selectOne(this,'q5b')"><div class="opt-indicator"></div>Excited — that's exactly the point</div>
+      <div class="opt" onclick="selectOne(this,'q5b')"><div class="opt-indicator"></div>Comfortable — mutual consent makes it feel safe</div>
+      <div class="opt" onclick="selectOne(this,'q5b')"><div class="opt-indicator"></div>A little unsure — I'd want to know more first</div>
       <div class="opt" onclick="selectOne(this,'q5b')"><div class="opt-indicator"></div>Uneasy — the in-person part concerns me</div>
     </div>
     <div class="btn-row">
@@ -614,7 +615,7 @@
       <div class="opt" onclick="selectOne(this,'q6a')"><div class="opt-indicator"></div>Meeting people in places I already go</div>
       <div class="opt" onclick="selectOne(this,'q6a')"><div class="opt-indicator"></div>Nothing — I'm not excited by this concept</div>
     </div>
-    <p class="q-sub-sm">Any other thoughts, concerns, or ideas?</p>
+    <p class="q-sub-sm">Any other thoughts or concerns?</p>
     <textarea class="text-area" id="q6b" placeholder="Share anything on your mind..."></textarea>
     <div class="err" id="err6"></div>
     <div class="btn-row">
@@ -721,17 +722,9 @@ function goBack(step) {
 
 async function submitSurvey() {
   const exciting = getSelected('q6a');
-  if (!exciting) { 
-    showErr('err6', 'Please select an option before submitting.'); 
-    return; 
-  }
-
   const feedback = document.getElementById('q6b').value.trim();
-  if (!feedback) { 
-    showErr('err6', 'Please share your thoughts before submitting.'); 
-    return; 
-  }
-
+  if (!exciting) { showErr('err6', 'Please select an option before submitting.'); return; }
+  if (!feedback) { showErr('err6', 'Please share your thoughts before submitting.'); return; }
   clearErr('err6');
 
   document.getElementById('submit-btn').disabled = true;

@@ -36,7 +36,6 @@
     overflow-x: hidden;
   }
 
-  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -50,50 +49,20 @@
     border-bottom: 1px solid var(--border);
   }
 
-  .nav-logo {
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 0.22em;
-    color: var(--red-light);
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-
+  .nav-logo { font-size: 18px; font-weight: 800; letter-spacing: 0.22em; color: var(--red-light); text-transform: uppercase; text-decoration: none; }
   .nav-links { display: flex; align-items: center; gap: 2rem; }
-
-  .nav-link {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--cream-dim);
-    text-decoration: none;
-    letter-spacing: 0.04em;
-    transition: color 0.15s;
-  }
-
+  .nav-link { font-size: 13px; font-weight: 600; color: var(--cream-dim); text-decoration: none; letter-spacing: 0.04em; transition: color 0.15s; }
   .nav-link:hover { color: var(--cream); }
-
-  .nav-cta {
-    background: var(--red);
-    color: var(--cream);
-    font-size: 13px;
-    font-weight: 700;
-    padding: 9px 20px;
-    border-radius: 99px;
-    text-decoration: none;
-    transition: background 0.15s;
-    box-shadow: 0 4px 14px rgba(138,14,14,0.35);
-  }
-
+  .nav-cta { background: var(--red); color: var(--cream); font-size: 13px; font-weight: 700; padding: 9px 20px; border-radius: 99px; text-decoration: none; transition: background 0.15s; box-shadow: 0 4px 14px rgba(138,14,14,0.35); }
   .nav-cta:hover { background: var(--red-mid); }
 
-  /* ── HERO ── */
   .hero {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 8rem 1.5rem 5rem;
+    padding: 8rem 1.5rem 7rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -118,16 +87,7 @@
     pointer-events: none;
   }
 
-  .hero-eyebrow {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    color: var(--red-light);
-    text-transform: uppercase;
-    margin-bottom: 1.4rem;
-    position: relative; z-index: 1;
-    opacity: 0; animation: fadeUp 0.7s 0.1s ease forwards;
-  }
+  .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--red-light); text-transform: uppercase; margin-bottom: 1.4rem; position: relative; z-index: 1; opacity: 0; animation: fadeUp 0.7s 0.1s ease forwards; }
 
   .hero h1 {
     font-family: 'Cormorant Garamond', serif;
@@ -143,199 +103,83 @@
   }
 
   .hero h1 em { font-style: italic; color: var(--red-light); }
-  .hero h1 .bold-red { font-weight: 700; color: var(--red-light); font-style: normal; }
 
   .hero-sub-italic {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-size: clamp(1.1rem, 2.8vw, 1.6rem);
+    font-weight: 700;
     color: var(--cream-dim);
     margin-bottom: 1.2rem;
     position: relative; z-index: 1;
     opacity: 0; animation: fadeUp 0.7s 0.3s ease forwards;
-    max-width: 560px;
+    max-width: 580px;
+    line-height: 1.4;
   }
 
   .hero-body {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
     color: var(--cream-dim);
-    max-width: 480px;
+    max-width: 500px;
     line-height: 1.8;
     margin-bottom: 2.8rem;
     position: relative; z-index: 1;
     opacity: 0; animation: fadeUp 0.7s 0.4s ease forwards;
   }
 
-  .hero-ctas {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: relative; z-index: 1;
-    opacity: 0; animation: fadeUp 0.7s 0.5s ease forwards;
-    margin-bottom: 1rem;
-  }
+  .hero-ctas { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; opacity: 0; animation: fadeUp 0.7s 0.5s ease forwards; margin-bottom: 1rem; }
 
-  .btn-primary {
-    background: var(--red);
-    color: var(--cream);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 14px 32px;
-    border-radius: 99px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
-    box-shadow: 0 4px 20px rgba(138,14,14,0.4);
-  }
-
+  .btn-primary { background: var(--red); color: var(--cream); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 700; padding: 14px 32px; border-radius: 99px; border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.15s, transform 0.1s, box-shadow 0.15s; box-shadow: 0 4px 20px rgba(138,14,14,0.4); }
   .btn-primary:hover { background: var(--red-mid); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(138,14,14,0.45); }
 
-  .btn-secondary {
-    background: transparent;
-    color: var(--cream-dim);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 14px 28px;
-    border-radius: 99px;
-    border: 1px solid var(--border);
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.15s;
-  }
-
+  .btn-secondary { background: transparent; color: var(--cream-dim); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 99px; border: 1px solid var(--border); cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.15s; }
   .btn-secondary:hover { border-color: var(--border-red); color: var(--cream); }
 
-  .hero-note {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--cream-muted);
-    position: relative; z-index: 1;
-    opacity: 0; animation: fadeUp 0.7s 0.6s ease forwards;
-    letter-spacing: 0.03em;
-  }
+  .hero-note { font-size: 13px; font-weight: 600; color: var(--cream-muted); position: relative; z-index: 1; opacity: 0; animation: fadeUp 0.7s 0.6s ease forwards; letter-spacing: 0.03em; margin-bottom: 3rem; }
 
-  .hero-scroll {
-    position: absolute;
-    bottom: 2rem; left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    opacity: 0; animation: fadeUp 0.7s 0.8s ease forwards;
-    z-index: 1;
-  }
-
+  .hero-scroll { display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; z-index: 1; opacity: 0; animation: fadeUp 0.7s 0.8s ease forwards; }
   .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--red-light), transparent); }
   .scroll-text { font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream-muted); }
 
-  /* ── SECTIONS ── */
-  section { padding: 6rem 1.5rem; }
-  .section-inner { max-width: 960px; margin: 0 auto; }
-
-  .section-tag {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--red-light);
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
-    font-size: clamp(2rem, 5vw, 3.8rem);
-    line-height: 1.1;
-    color: var(--cream);
-    margin-bottom: 1rem;
-  }
-
+  section { padding: 6rem 1.5rem; position: relative; overflow: hidden; }
+  section::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.35) 100%); pointer-events: none; z-index: 0; }
+  section > * { position: relative; z-index: 1; }
+  .section-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+  .section-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red-light); margin-bottom: 1rem; display: block; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 5vw, 3.8rem); line-height: 1.1; color: var(--cream); margin-bottom: 1rem; }
   .section-title em { font-style: italic; color: var(--red-light); }
+  .section-body { font-size: 15px; font-weight: 500; color: var(--cream-dim); line-height: 1.8; max-width: 560px; }
 
-  .section-body {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--cream-dim);
-    line-height: 1.8;
-    max-width: 560px;
-  }
-
-  /* ── PROBLEM ── */
   .problem { background: var(--ink-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-
   .problem-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin-top: 3rem; }
-
-  .problem-card { background: var(--ink-3); padding: 2rem 1.5rem; }
+  .problem-card { background: var(--ink); padding: 2rem 1.5rem; }
   .problem-card:first-child { border-radius: var(--radius) 0 0 var(--radius); }
   .problem-card:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+  .problem-title { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 800; color: rgba(176,18,18,0.85); margin-bottom: 12px; line-height: 1.15; }
+  .problem-desc { font-size: 15px; font-weight: 500; color: var(--cream-dim); line-height: 1.75; }
 
-  .problem-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: rgba(138,14,14,0.3); line-height: 1; margin-bottom: 0.8rem; }
-  .problem-title { font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 8px; line-height: 1.3; }
-  .problem-desc { font-size: 13px; font-weight: 500; color: var(--cream-dim); line-height: 1.7; }
-
-  /* ── HOW IT WORKS ── */
-  .how-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-    margin-top: 3.5rem;
-  }
-
+  .how-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-top: 3.5rem; }
   .steps { display: flex; flex-direction: column; gap: 1.5px; }
-
-  .step-card {
-    background: var(--ink-2);
-    padding: 2rem 1.8rem;
-    position: relative;
-    overflow: hidden;
-  }
-
+  .step-card { background: var(--ink-2); padding: 2rem 1.8rem; position: relative; overflow: hidden; }
   .step-card:first-child { border-radius: var(--radius) var(--radius) 0 0; }
   .step-card:last-child { border-radius: 0 0 var(--radius) var(--radius); }
-
-  .step-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(to right, var(--red), transparent);
-  }
-
+  .step-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, var(--red), transparent); }
   .step-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: rgba(138,14,14,0.15); line-height: 1; margin-bottom: 0.6rem; }
   .step-title { font-size: 16px; font-weight: 700; color: var(--cream); margin-bottom: 6px; line-height: 1.3; }
   .step-desc { font-size: 13px; font-weight: 500; color: var(--cream-dim); line-height: 1.75; }
   .step-icon { font-size: 22px; margin-bottom: 0.6rem; display: block; }
 
-  /* ── PROFILE CARD TEASER ── */
   .app-teaser { position: sticky; top: 100px; }
-
   .teaser-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,239,230,0.3); margin-bottom: 10px; text-align: center; }
-
   .profile-teaser { background: #120D0D; border-radius: 20px; overflow: hidden; border: 1px solid rgba(245,239,230,0.06); }
-
   .teaser-header { padding: 12px 16px 10px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(245,239,230,0.04); }
   .t-app-name { font-size: 12px; font-weight: 800; letter-spacing: 0.2em; color: var(--red-light); text-transform: uppercase; }
   .t-sub { font-size: 10px; font-weight: 600; color: rgba(245,239,230,0.35); }
-
   .slide-dots { display: flex; gap: 4px; align-items: center; }
   .sdot { width: 5px; height: 5px; border-radius: 50%; background: rgba(245,239,230,0.15); transition: all 0.2s; }
   .sdot.active { background: var(--red-light); width: 14px; border-radius: 99px; }
-
   .slider-outer { overflow: hidden; }
   .slider-track { display: flex; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
   .slide { min-width: 100%; background: #1A1210; }
-
   .photo-area { height: 220px; background: linear-gradient(160deg, #2A1A1A 0%, #1A1010 60%, #0D0808 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
   .photo-initials { font-size: 60px; font-weight: 800; color: rgba(245,239,230,0.04); }
   .photo-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,3,3,0.97) 0%, rgba(8,3,3,0.3) 55%, transparent 100%); }
@@ -344,21 +188,17 @@
   .photo-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 14px; }
   .photo-name { font-size: 20px; font-weight: 800; color: #F5EFE6; margin-bottom: 2px; }
   .photo-meta { font-size: 11px; font-weight: 600; color: rgba(245,239,230,0.5); }
-
   .shared-bar { padding: 10px 14px; background: #120D0D; display: flex; gap: 5px; flex-wrap: wrap; border-bottom: 1px solid rgba(245,239,230,0.03); }
   .place-tag { display: flex; align-items: center; gap: 4px; background: rgba(138,14,14,0.12); border: 1px solid rgba(138,14,14,0.25); border-radius: 99px; padding: 4px 8px; font-size: 10px; font-weight: 700; color: #F5EFE6; }
   .place-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--red-light); flex-shrink: 0; }
-
   .card-actions { padding: 10px 14px 14px; display: flex; gap: 8px; }
   .btn-pass { flex: 1; background: rgba(245,239,230,0.05); color: rgba(245,239,230,0.4); border: 1px solid rgba(245,239,230,0.07); border-radius: 99px; padding: 10px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; }
   .btn-like { flex: 2; background: var(--red); color: #F5EFE6; border: none; border-radius: 99px; padding: 10px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; box-shadow: 0 3px 12px rgba(138,14,14,0.4); }
-
   .prompt-card { padding: 16px 16px 0; }
   .prompt-block { margin-bottom: 16px; }
   .prompt-q { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,239,230,0.35); margin-bottom: 5px; }
   .prompt-a { font-size: 15px; font-weight: 600; color: #F5EFE6; line-height: 1.35; }
   .prompt-divider { height: 1px; background: rgba(245,239,230,0.04); margin: 14px 0; }
-
   .voice-block { margin: 0 14px 14px; background: #120D0D; border: 1px solid rgba(138,14,14,0.18); border-radius: 12px; padding: 11px 13px; }
   .voice-label { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,239,230,0.3); margin-bottom: 6px; }
   .voice-prompt-q { font-size: 11px; font-weight: 500; color: rgba(245,239,230,0.35); margin-bottom: 7px; font-style: italic; }
@@ -369,16 +209,12 @@
   .wave-bar.t { background: rgba(176,18,18,0.65); }
   .wave-bar.m { background: rgba(176,18,18,0.4); }
   .voice-time { font-size: 10px; font-weight: 700; color: rgba(245,239,230,0.25); flex-shrink: 0; }
-
   .swipe-nav { display: flex; gap: 6px; padding: 10px 14px 14px; background: #1A1210; }
   .nav-btn { flex: 1; background: rgba(245,239,230,0.04); color: rgba(245,239,230,0.4); border: 1px solid rgba(245,239,230,0.06); border-radius: 99px; padding: 8px; font-size: 11px; font-weight: 600; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; transition: all 0.15s; }
   .nav-btn.active { background: rgba(138,14,14,0.15); border-color: rgba(138,14,14,0.3); color: var(--red-light); }
 
-  /* ── GREEN LIGHT ── */
   .gl-section { background: var(--ink-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-
   .gl-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-
   .gl-teaser { border-radius: 20px; overflow: hidden; border: 1px solid rgba(138,14,14,0.2); }
   .gl-bg { background: #080404; padding: 32px 20px 24px; text-align: center; position: relative; overflow: hidden; }
   .gl-glow { position: absolute; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(138,14,14,0.3) 0%, transparent 70%); top: 40%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; }
@@ -390,7 +226,6 @@
   .gl-heading { font-size: 22px; font-weight: 800; color: #F5EFE6; margin-bottom: 6px; position: relative; z-index: 1; letter-spacing: -0.02em; line-height: 1.1; }
   .gl-sub { font-size: 12px; font-weight: 500; color: rgba(245,239,230,0.5); line-height: 1.75; margin-bottom: 18px; position: relative; z-index: 1; }
   .gl-sub strong { color: #F5EFE6; font-weight: 700; }
-
   .gl-profiles { display: flex; justify-content: center; align-items: center; gap: 14px; margin-bottom: 16px; position: relative; z-index: 1; }
   .gl-avatar-wrap { display: flex; flex-direction: column; align-items: center; gap: 5px; }
   .gl-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #F5EFE6; }
@@ -398,14 +233,12 @@
   .gl-connector { display: flex; flex-direction: column; align-items: center; gap: 4px; }
   .gl-line { width: 30px; height: 1px; background: linear-gradient(to right, rgba(138,14,14,0.2), var(--red-light), rgba(138,14,14,0.2)); }
   .gl-dot-mid { width: 7px; height: 7px; border-radius: 50%; background: var(--red-light); box-shadow: 0 0 8px rgba(138,14,14,0.9); }
-
   .gl-venue-box { background: rgba(245,239,230,0.03); border: 1px solid rgba(245,239,230,0.07); border-radius: 10px; padding: 9px 14px; display: flex; align-items: center; gap: 8px; margin-bottom: 4px; position: relative; z-index: 1; text-align: left; }
   .gl-venue-pin { width: 26px; height: 26px; border-radius: 50%; background: rgba(138,14,14,0.18); border: 1px solid rgba(138,14,14,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 12px; }
   .gl-venue-name { font-size: 12px; font-weight: 700; color: #F5EFE6; }
   .gl-venue-dist { font-size: 10px; font-weight: 500; color: rgba(245,239,230,0.3); margin-top: 1px; }
   .gl-caption { font-size: 10px; font-weight: 600; color: rgba(245,239,230,0.25); text-align: center; padding: 8px 14px 12px; background: #1A1210; font-style: italic; }
 
-  /* ── DIFF ── */
   .diff-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 3rem; }
   .diff-card { background: var(--ink-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.8rem 1.5rem; transition: border-color 0.2s; }
   .diff-card:hover { border-color: var(--border-red); }
@@ -413,19 +246,18 @@
   .diff-title { font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 6px; line-height: 1.3; }
   .diff-desc { font-size: 13px; font-weight: 500; color: var(--cream-dim); line-height: 1.7; }
 
-  /* ── NYC ── */
   .nyc { text-align: center; }
   .nyc-inner { max-width: 640px; margin: 0 auto; }
-  .nyc-stat { font-family: 'Cormorant Garamond', serif; font-size: clamp(4rem, 12vw, 9rem); font-weight: 300; color: var(--red-light); line-height: 1; margin-bottom: 0.5rem; opacity: 0.6; }
+  .nyc-tag { font-size: 16px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); margin-bottom: 1.5rem; display: block; }
+  .nyc-stat { font-family: 'Cormorant Garamond', serif; font-size: clamp(6rem, 16vw, 12rem); font-weight: 500; color: #B01212; line-height: 1; margin-bottom: 0.5rem; }
 
-  /* ── SURVEY CTA ── */
   .survey-cta { text-align: center; padding: 7rem 1.5rem; position: relative; overflow: hidden; }
   .survey-cta::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(138,14,14,0.12) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; }
-  .survey-cta .section-title { position: relative; z-index: 1; }
+  .survey-cta-title { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; color: var(--cream); margin-bottom: 1rem; position: relative; z-index: 1; }
+  .survey-cta-title em { font-style: italic; color: var(--red-light); }
   .survey-cta .section-body { position: relative; z-index: 1; margin: 1rem auto 2.5rem; text-align: left; max-width: 480px; }
   .survey-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
 
-  /* ── FOOTER ── */
   footer { border-top: 1px solid var(--border); padding: 2rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
   .footer-logo { font-size: 15px; font-weight: 800; letter-spacing: 0.22em; color: var(--red-light); text-transform: uppercase; text-decoration: none; }
   .footer-links { display: flex; gap: 1.5rem; align-items: center; }
@@ -460,13 +292,13 @@
 <section class="hero">
   <p class="hero-eyebrow">Dating App · Coming to NYC First</p>
   <h1>The best matches <em>aren't</em> always on your screen.</h1>
-  <p class="hero-sub-italic">People perfect for each other <span style="font-weight:700; color:var(--red-light); font-style:normal;">walk right past</span> without ever knowing.</p>
-  <p class="hero-body">Brush is the world's first hybrid dating app built for mutually interested people already at the same places.</p>
+  <p class="hero-sub-italic"><span style="color:var(--cream); font-style:normal;">People </span><span style="font-style:italic; color:var(--red-light);">perfect</span><span style="color:var(--cream); font-style:normal;"> for each other </span><span style="font-style:italic; color:var(--red-light);">walk right past</span><span style="color:var(--cream); font-style:normal;"> without ever knowing.</span></p>
+  <p class="hero-body">Brush is the world's first <span style="color:var(--red-light);">hybrid dating app</span> built for mutually interested people already at the same places.</p>
   <div class="hero-ctas">
     <a href="/survey" class="btn-primary">Help us build it →</a>
     <a href="#how-it-works" class="btn-secondary">See how it works</a>
   </div>
-  <p class="hero-note">Takes 3 minutes &nbsp;·&nbsp; Win a $100 Amazon gift card</p>
+  <p class="hero-note">Takes 2 minutes · Win a $100 Amazon gift card</p>
   <div class="hero-scroll">
     <div class="scroll-text">Scroll</div>
     <div class="scroll-line"></div>
@@ -476,23 +308,20 @@
 <section class="problem" id="problem">
   <div class="section-inner">
     <span class="section-tag">The problem</span>
-    <h2 class="section-title">Dating apps were supposed to<br>help us <em>meet</em> people.</h2>
-    <p class="section-body">So why are we all still just texting strangers? Three things broke modern dating.</p>
+    <h2 class="section-title">Dating apps were never going to replace <em>face to face</em> connection.</h2>
+    <p class="section-body">Three things stand in the way.</p>
     <div class="problem-grid">
       <div class="problem-card">
-        <div class="problem-num">01</div>
-        <div class="problem-title">Matches go nowhere</div>
-        <div class="problem-desc">The average match never leads to a date. We're collecting connections, not making them.</div>
+        <div class="problem-title" style="color:var(--cream);">Approaching is becoming a lost art</div>
+        <div class="problem-desc">People are making <span style="color:var(--cream);font-weight:700;">spontaneous real-life connections</span> <span style="color:var(--red-light);font-weight:700;">less than ever</span> compared to decades of the past.</div>
       </div>
       <div class="problem-card">
-        <div class="problem-num">02</div>
-        <div class="problem-title">No real-world bridge</div>
-        <div class="problem-desc">Apps stop at the match. Nobody designed the moment that takes you from the screen to the same room.</div>
+        <div class="problem-title" style="color:var(--cream);">Without a signal, why would you?</div>
+        <div class="problem-desc">If you don't know whether someone's interested, walking up to them feels like <span style="color:var(--cream);font-weight:700;">a risk nobody wants to take.</span> The <span style="color:var(--red-light);font-weight:700;">fear of rejection</span> wins every time.</div>
       </div>
       <div class="problem-card">
-        <div class="problem-num">03</div>
-        <div class="problem-title">Approaching feels impossible</div>
-        <div class="problem-desc">Without knowing someone's interested, walking up to them in real life feels like a leap nobody wants to take.</div>
+        <div class="problem-title" style="color:var(--cream);">No real-world bridge</div>
+        <div class="problem-desc">Apps stop at the match. Nobody designed <span style="color:var(--cream);font-weight:700;">the moment</span> that takes you from the <span style="color:var(--red-light);font-weight:700;">screen</span> to the <span style="color:var(--red-light);font-weight:700;">same room.</span></div>
       </div>
     </div>
   </div>
@@ -502,30 +331,30 @@
   <div class="section-inner">
     <span class="section-tag">How it works</span>
     <h2 class="section-title">Chemistry first.<br><em>Location</em> closes the gap.</h2>
-    <p class="section-body">Brush works in four steps — each one building toward a real moment.</p>
+    <p class="section-body">Brush works in four steps, each one building toward a real moment.</p>
     <div class="how-layout">
       <div class="steps">
         <div class="step-card">
           <span class="step-icon">👤</span>
-          <div class="step-num">01</div>
+
           <div class="step-title">Match on chemistry</div>
-          <div class="step-desc">Browse profiles of people who frequent the same places as you. Likes are blind — nobody knows until it's mutual.</div>
+          <div class="step-desc">Browse profiles of people who frequent the same places as you. Likes are blind, nobody knows until it's mutual.</div>
         </div>
         <div class="step-card">
           <span class="step-icon">💬</span>
-          <div class="step-num">02</div>
+
           <div class="step-title">Chat with a purpose</div>
-          <div class="step-desc">A short, intentional chat opens. Not endless messaging — just enough to know the vibe is real.</div>
+          <div class="step-desc">A short, intentional chat opens. Not endless messaging, just enough to know the vibe is real.</div>
         </div>
         <div class="step-card">
           <span class="step-icon">🔁</span>
-          <div class="step-num">03</div>
+
           <div class="step-title">Flip the switch</div>
-          <div class="step-desc">When you're both ready, each of you toggles open to meeting in person. A mutual agreement — no pressure.</div>
+          <div class="step-desc">When you're both ready, each of you toggles open to meeting in person. A mutual agreement with no pressure.</div>
         </div>
         <div class="step-card">
           <span class="step-icon">🔔</span>
-          <div class="step-num">04</div>
+
           <div class="step-title">You've been brushed.</div>
           <div class="step-desc">The moment you're both in the same place, you both feel it simultaneously. No GPS shared. Just the signal.</div>
         </div>
@@ -545,7 +374,6 @@
           </div>
           <div class="slider-outer">
             <div class="slider-track" id="ltrack">
-
               <div class="slide">
                 <div class="photo-area">
                   <div class="photo-initials">SA</div>
@@ -566,7 +394,6 @@
                   <button class="btn-like">❤ Like</button>
                 </div>
               </div>
-
               <div class="slide">
                 <div class="prompt-card">
                   <div class="prompt-block">
@@ -589,7 +416,6 @@
                   <button class="btn-like">❤ Like</button>
                 </div>
               </div>
-
               <div class="slide">
                 <div class="prompt-card">
                   <div class="prompt-block">
@@ -616,7 +442,6 @@
                   <button class="btn-like">❤ Like</button>
                 </div>
               </div>
-
             </div>
           </div>
           <div class="swipe-nav">
@@ -636,8 +461,10 @@
       <div>
         <span class="section-tag">The moment</span>
         <h2 class="section-title">When your paths cross,<br>you <em>both</em> know it.</h2>
-        <p class="section-body" style="margin-bottom:1.5rem;">The brush notification fires simultaneously for both of you — no GPS shared, no exact location, just the signal that the moment is there if you want it.</p>
-        <p class="section-body">Neither person has more information than the other. That's by design.</p>
+        <div style="background:var(--ink-2); border-radius:var(--radius); padding:1.5rem; margin-top:1rem;">
+          <p class="section-body" style="max-width:100%; margin-bottom:1rem;">The brush notification fires simultaneously for both of you. No GPS shared, no exact location, just the signal that the moment is there if you want it.</p>
+          <p class="section-body" style="max-width:100%;">Neither person has more information than the other. That's by design.</p>
+        </div>
       </div>
       <div>
         <div class="teaser-label" style="text-align:center; margin-bottom:10px;">What the brush moment looks like</div>
@@ -651,7 +478,7 @@
             </div>
             <div class="gl-tag">From Brush</div>
             <div class="gl-heading">You've been brushed.</div>
-            <div class="gl-sub">You and <strong>Sara</strong> are both open to meeting —<br>and you're both here <strong>right now.</strong></div>
+            <div class="gl-sub">You and <strong>Sara</strong> are both open to meeting and you're both here <strong>right now.</strong></div>
             <div class="gl-profiles">
               <div class="gl-avatar-wrap">
                 <div class="gl-avatar" style="background:rgba(245,239,230,0.07);">You</div>
@@ -671,7 +498,7 @@
               <div class="gl-venue-pin">📍</div>
               <div>
                 <div class="gl-venue-name">Devoción Coffee, Williamsburg</div>
-                <div class="gl-venue-dist">No exact location shared — just the signal</div>
+                <div class="gl-venue-dist">No exact location shared, just the signal</div>
               </div>
             </div>
           </div>
@@ -691,17 +518,17 @@
       <div class="diff-card">
         <div class="diff-icon">⚖️</div>
         <div class="diff-title">Neither person has the upper hand</div>
-        <div class="diff-desc">Blind mutual likes. Simultaneous notifications. Nobody approaches without knowing the interest is already there.</div>
+        <div class="diff-desc">Blind mutual likes mean you don't know who liked you until it's mutual. No power imbalance, no awkwardness, just an equal moment of connection for both of you.</div>
       </div>
       <div class="diff-card">
         <div class="diff-icon">📍</div>
         <div class="diff-title">Your world, not a map</div>
-        <div class="diff-desc">Profiles shown based on places you actually go — same bars, same gyms, same spots. No GPS tracking. No strangers on a radar.</div>
+        <div class="diff-desc">Profiles shown based on places you actually go. Same bars, same gyms, same spots. No GPS tracking and no strangers on a radar.</div>
       </div>
       <div class="diff-card">
         <div class="diff-icon">🤝</div>
         <div class="diff-title">Real life is the destination</div>
-        <div class="diff-desc">Chat is a runway, not the point. Every feature in Brush is designed to get you to the same room — not keep you on the app.</div>
+        <div class="diff-desc">Chat is a runway, not the point. Every feature in Brush is designed to get you to the same room, not keep you on the app.</div>
       </div>
     </div>
   </div>
@@ -709,10 +536,10 @@
 
 <section class="nyc" style="background: var(--ink-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
   <div class="section-inner nyc-inner">
-    <span class="section-tag" style="display:block; margin-bottom:1.5rem;">Starting in New York City</span>
+    <span class="nyc-tag">Starting in New York City</span>
     <div class="nyc-stat">8M</div>
     <h2 class="section-title" style="margin-bottom:1rem;">People in this city.<br>Your match could be<br><em>around the corner.</em></h2>
-    <p class="section-body" style="margin: 0 auto 2.5rem; text-align: center;">Brush is launching in NYC first. We're building it for people like you — and we need your input to get it right.</p>
+    <p class="section-body" style="margin: 0 auto 2.5rem; text-align: center;">Brush is launching in NYC first. We're building it for people like you and we need your input to get it right.</p>
     <a href="/survey" class="btn-primary">Help shape it →</a>
   </div>
 </section>
@@ -720,8 +547,8 @@
 <section class="survey-cta">
   <div class="section-inner" style="max-width:640px; margin: 0 auto;">
     <span class="section-tag" style="display:block; margin-bottom:1rem;">We need your input</span>
-    <h2 class="section-title">3 minutes.<br><em>Real impact.</em></h2>
-    <p class="section-body">We're in the early stages of building Brush and your feedback shapes what it becomes. Take the survey, share your honest thoughts, and enter to win a $100 Amazon gift card.</p>
+    <h2 class="survey-cta-title">2 minutes.<br><em>Shape what Brush becomes.</em></h2>
+    <p class="section-body">We're in the early stages of building Brush and your feedback shapes what it becomes. Take the survey, share your honest thoughts, and opt in to our exclusive waitlist to be first when Brush launches in NYC. Everyone who completes the survey will be entered to win a $100 Amazon gift card.</p>
     <div class="survey-cta-btns">
       <a href="/survey" class="btn-primary">Take the survey →</a>
       <a href="https://instagram.com/brush.dating" target="_blank" class="btn-secondary">Instagram @brush.dating</a>

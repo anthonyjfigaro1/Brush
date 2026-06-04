@@ -631,6 +631,16 @@
       <h2 class="done-title">You're in the draw!</h2>
       <p class="done-sub">Thank you so much — this kind of feedback is exactly what we need to build something people actually want. We'll pick a winner at random and reach out within 4 weeks.</p>
       <div class="done-note">Winner selected from fully completed responses only. One entry per person. $100 Amazon gift card delivered digitally to the email you provided.</div>
+
+      <div id="waitlist-wrap" style="margin-top:2rem; background:var(--ink-2); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; text-align:left;">
+        <p style="font-size:14px; font-weight:700; color:var(--cream); margin-bottom:6px;">Want to be first when Brush launches in NYC?</p>
+        <p style="font-size:13px; font-weight:500; color:var(--cream-dim); margin-bottom:16px; line-height:1.6;">Join our exclusive waitlist and we'll reach out the moment we go live.</p>
+        <label style="display:flex; align-items:center; gap:12px; cursor:pointer; user-select:none;">
+          <div id="wl-checkbox" onclick="toggleWaitlist()" style="width:22px; height:22px; border-radius:6px; border:2px solid rgba(245,239,230,0.2); background:var(--ink); flex-shrink:0; display:flex; align-items:center; justify-content:center; transition:all 0.15s; cursor:pointer;"></div>
+          <span style="font-size:14px; font-weight:600; color:var(--cream-dim);">Yes, add me to the Brush waitlist</span>
+        </label>
+        <div id="waitlist-msg" style="display:none; margin-top:12px; font-size:13px; font-weight:600; color:var(--red-light);">You're on the waitlist!</div>
+      </div>
     </div>
   </div>
 </div>
@@ -639,7 +649,30 @@
 const AIRTABLE_TOKEN = 'patxVN016nzCicGiX';
 const BASE_ID = 'app0WMVpbZhaKE2as';
 const TABLE_ID = 'tbl2zfXDlfdhSmICe';
+const WAITLIST_TABLE_ID = 'tblfd6cQKdbjEBcum';
 const TOTAL_STEPS = 7;
+
+let waitlistJoined = false;
+
+async function toggleWaitlist() {
+  if (waitlistJoined) return;
+  waitlistJoined = true;
+
+  var checkbox = document.getElementById('wl-checkbox');
+  checkbox.style.background = 'var(--red)';
+  checkbox.style.borderColor = 'var(--red)';
+  checkbox.innerHTML = '<svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  try {
+    await fetch('https://api.airtable.com/v0/' + BASE_ID + '/' + WAITLIST_TABLE_ID, {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer ' + AIRTABLE_TOKEN, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ fields: { 'First Name': answers.name, 'Email': answers.email } })
+    });
+  } catch(e) { console.error('Waitlist error:', e); }
+
+  document.getElementById('waitlist-msg').style.display = 'block';
+}
 
 let current = 0;
 const answers = {};
